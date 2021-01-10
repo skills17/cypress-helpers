@@ -21,5 +21,7 @@ jobs:
       run: docker-compose exec -T app chown -R node:node /workspaces/cypress-helpers
     - name: Install dependencies
       run: docker-compose exec -T --workdir /workspaces/cypress-helpers --user node app npm ci
+    - name: Build library
+      run: docker-compose exec -T --workdir /workspaces/cypress-helpers --user node app npm run build
     - name: Test
       run: docker-compose exec -T --workdir /workspaces/cypress-helpers --user node app npm test
