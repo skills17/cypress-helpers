@@ -6,8 +6,25 @@ import TaskServer from '@skills17/static-task-server';
 export default class CommandWrapper {
   private config: TaskConfig;
 
+  private server?: TaskServer;
+
   constructor(private argv: string[]) {
     this.config = new TaskConfig();
+  }
+
+  /**
+   * Builds arguments that will be passed to the cypress command
+   */
+  private buildCypressArgs(): string[] {
+    const args = [...this.argv];
+
+    // set base url
+    if (this.server) {
+      args.push('--config');
+      args.push(`baseUrl=${this.server.getHost()}`);
+    }
+
+    return args;
   }
 
   /**
@@ -15,7 +32,7 @@ export default class CommandWrapper {
    */
   private runCypress(): Promise<number> {
     return new Promise((resolve) => {
-      const command = `$(npm bin)/cypress ${shellEscape(this.argv)}`;
+      const command = `$(npm bin)/cypress ${shellEscape(this.buildCypressArgs())}`;
 
       // execute cypress
       const cypress = exec(command, {
@@ -37,18 +54,17 @@ export default class CommandWrapper {
     await this.config.loadFromFile();
 
     // start task server
-    let server;
     if (this.config.getServe().enabled) {
-      server = new TaskServer(this.config);
-      await server.serve();
+      this.server = new TaskServer(this.config);
+      await this.server.serve();
       console.log(); // eslint-disable-line no-console
     }
 
     // run cypress
     const exitCode = await this.runCypress();
 
-    if (server) {
-      await server.stop();
+    if (this.server) {
+      await this.server.stop();
     }
 
     process.exit(exitCode);
