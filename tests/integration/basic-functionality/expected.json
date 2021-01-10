@@ -1,0 +1,22 @@
+
+{
+  "testResults": [
+    {
+      "group": "Basic Functionality.+",
+      "points": 1,
+      "maxPoints": 1,
+      "strategy": "add",
+      "manualCheck": false,
+      "tests": [
+        {
+          "name": "Basic Functionality > serves the html file",
+          "points": 1,
+          "maxPoints": 1,
+          "successful": true,
+          "required": false,
+          "manualCheck": false
+        }
+      ]
+    }
+  ]
+}

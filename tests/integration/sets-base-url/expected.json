@@ -1,0 +1,22 @@
+
+{
+  "testResults": [
+    {
+      "group": "Sets Base Url.+",
+      "points": 1,
+      "maxPoints": 1,
+      "strategy": "add",
+      "manualCheck": false,
+      "tests": [
+        {
+          "name": "Sets Base Url > automatically sets the correct base url",
+          "points": 1,
+          "maxPoints": 1,
+          "successful": true,
+          "required": false,
+          "manualCheck": false
+        }
+      ]
+    }
+  ]
+}

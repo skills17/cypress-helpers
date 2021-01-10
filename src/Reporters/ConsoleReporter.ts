@@ -26,7 +26,7 @@ export default class ConsoleReporter {
 
   public onRunEnd(): void {
     const printer = new TestResultPrinter(this.testRun as TestRun);
-    printer.print();
+    printer.print({ printFooter: false });
   }
 }
 

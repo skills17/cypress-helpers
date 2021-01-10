@@ -2,6 +2,33 @@ import fs from 'fs';
 import path from 'path';
 import { exec } from 'child_process';
 
+const executeCypress = (
+  testName: string,
+  args: string,
+): Promise<{ exitCode: number; output: string }> => {
+  return new Promise((resolve) => {
+    const bin = path.resolve(__dirname, '..', '..', 'bin', 'skills17-cypress');
+
+    // execute cypress in the subdirectory
+    const cmd = exec(`${bin} ${args}`, {
+      cwd: path.resolve(__dirname, testName),
+      env: { ...process.env, FORCE_COLOR: '0' },
+    });
+
+    // catch output
+    let output = '';
+    cmd.stdout?.on('data', (data) => {
+      output += data;
+    });
+    cmd.stderr?.on('data', (data) => {
+      output += data;
+    });
+
+    // wait until the process finishes
+    cmd.on('exit', (code: number) => resolve({ exitCode: code, output }));
+  });
+};
+
 describe('integration tests', () => {
   // get all integration tests
   const integrationTests = fs.readdirSync(__dirname).filter((file) => {
@@ -9,31 +36,11 @@ describe('integration tests', () => {
     return fileInfo.isDirectory();
   });
 
-  const bin = path.resolve(__dirname, '..', '..', 'bin', 'skills17-cypress');
-
   it.each(integrationTests)(
-    '%s',
+    '%s - console reporter',
     async (test) => {
       // execute cypress in the subdirectory
-      const cmd = exec(`${bin} run --quiet`, {
-        cwd: path.resolve(__dirname, test),
-        env: { ...process.env, FORCE_COLOR: '0' },
-      });
-
-      // catch output
-      let output = '';
-      cmd.stdout?.on('data', (data) => {
-        output += data;
-      });
-      cmd.stderr?.on('data', (data) => {
-        output += data;
-      });
-
-      // wait until the process finishes
-      const exitPromise = new Promise((resolve) => {
-        cmd.on('exit', (code) => resolve(code));
-      });
-      const exitCode = await exitPromise;
+      const { exitCode, output } = await executeCypress(test, 'run --quiet');
 
       // update expected output if required
       if (process.env.UPDATE_EXPECTED_OUTPUT === '1') {
@@ -42,6 +49,26 @@ describe('integration tests', () => {
 
       // read expected output
       const expectedOutput = fs.readFileSync(path.resolve(__dirname, test, 'expected.txt'));
+
+      expect(exitCode).toEqual(0);
+      expect(output.trim()).toEqual(expectedOutput.toString().trim());
+    },
+    60000,
+  );
+
+  it.each(integrationTests)(
+    '%s - json reporter',
+    async (test) => {
+      // execute cypress in the subdirectory
+      const { exitCode, output } = await executeCypress(test, 'run --quiet --json');
+
+      // update expected output if required
+      if (process.env.UPDATE_EXPECTED_OUTPUT === '1') {
+        fs.writeFileSync(path.resolve(__dirname, test, 'expected.json'), output);
+      }
+
+      // read expected output
+      const expectedOutput = fs.readFileSync(path.resolve(__dirname, test, 'expected.json'));
 
       expect(exitCode).toEqual(0);
       expect(output.trim()).toEqual(expectedOutput.toString().trim());
