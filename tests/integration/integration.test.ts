@@ -15,19 +15,19 @@ describe('integration tests', () => {
     '%s',
     async (test) => {
       // execute cypress in the subdirectory
-      const cmd = exec(`${bin} run`, {
+      const cmd = exec(`${bin} run --quiet`, {
         cwd: path.resolve(__dirname, test),
         env: { ...process.env, FORCE_COLOR: '0' },
       });
 
       // catch output
-      /* let output = '';
+      let output = '';
       cmd.stdout?.on('data', (data) => {
         output += data;
       });
       cmd.stderr?.on('data', (data) => {
         output += data;
-      }); */
+      });
 
       // wait until the process finishes
       const exitPromise = new Promise((resolve) => {
@@ -35,11 +35,16 @@ describe('integration tests', () => {
       });
       const exitCode = await exitPromise;
 
+      // update expected output if required
+      if (process.env.UPDATE_EXPECTED_OUTPUT === '1') {
+        fs.writeFileSync(path.resolve(__dirname, test, 'expected.txt'), output);
+      }
+
       // read expected output
-      // const expectedOutput = fs.readFileSync(path.resolve(__dirname, test, 'expected.txt'));
+      const expectedOutput = fs.readFileSync(path.resolve(__dirname, test, 'expected.txt'));
 
       expect(exitCode).toEqual(0);
-      // expect(output.trim()).toEqual(expectedOutput.toString().trim());
+      expect(output.trim()).toEqual(expectedOutput.toString().trim());
     },
     60000,
   );

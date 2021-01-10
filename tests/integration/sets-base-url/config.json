@@ -5,5 +5,10 @@
     "mapping": {
       "/src": "./src"
     }
-  }
+  },
+  "groups": [
+    {
+      "match": "Sets Base Url.+"
+    }
+  ]
 }

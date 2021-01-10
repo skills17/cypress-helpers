@@ -1,3 +1,4 @@
+import path from 'path';
 import { exec } from 'child_process';
 import shellEscape from 'shell-escape';
 import TaskConfig from '@skills17/task-config';
@@ -13,15 +14,34 @@ export default class CommandWrapper {
   }
 
   /**
+   * Returns whether the output is json or not
+   */
+  private isJson(): boolean {
+    return this.argv.includes('--json');
+  }
+
+  /**
    * Builds arguments that will be passed to the cypress command
    */
   private buildCypressArgs(): string[] {
-    const args = [...this.argv];
+    const args = [...this.argv.filter((arg) => arg !== '--json')];
 
     // set base url
     if (this.server) {
       args.push('--config');
       args.push(`baseUrl=${this.server.getHost()}`);
+    }
+
+    // add custom reporter
+    if (!args.includes('--reporter') && !args.includes('-r')) {
+      args.push('--reporter');
+      args.push(
+        path.resolve(
+          __dirname,
+          'Reporters',
+          this.isJson() ? 'JsonReporter.js' : 'ConsoleReporter.js',
+        ),
+      );
     }
 
     return args;
@@ -56,7 +76,7 @@ export default class CommandWrapper {
     // start task server
     if (this.config.getServe().enabled) {
       this.server = new TaskServer(this.config);
-      await this.server.serve();
+      await this.server.serve(!this.isJson());
       console.log(); // eslint-disable-line no-console
     }
 
