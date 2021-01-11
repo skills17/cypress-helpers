@@ -41,13 +41,18 @@ export default class CommandWrapper {
     const args = [...this.argv.filter((arg) => arg !== '--json')];
 
     // set base url
-    if (this.server) {
+    if (this.server && args.length > 0) {
       args.push('--config');
       args.push(`baseUrl=${this.server.getHost()}`);
     }
 
     // add custom reporter
-    if (!args.includes('--reporter') && !args.includes('-r')) {
+    if (
+      !args.includes('--reporter') &&
+      !args.includes('-r') &&
+      args.length > 0 &&
+      args[0].trim() !== 'open'
+    ) {
       args.push('--reporter');
       args.push(
         path.resolve(
