@@ -40,7 +40,7 @@ describe('integration tests', () => {
     '%s - console reporter',
     async (test) => {
       // execute cypress in the subdirectory
-      const { exitCode, output } = await executeCypress(test, 'run --quiet');
+      const { output } = await executeCypress(test, 'run --quiet');
 
       // update expected output if required
       if (process.env.UPDATE_EXPECTED_OUTPUT === '1') {
@@ -50,7 +50,6 @@ describe('integration tests', () => {
       // read expected output
       const expectedOutput = fs.readFileSync(path.resolve(__dirname, test, 'expected.txt'));
 
-      expect(exitCode).toEqual(0);
       expect(output.trim()).toEqual(expectedOutput.toString().trim());
     },
     60000,
@@ -60,7 +59,7 @@ describe('integration tests', () => {
     '%s - json reporter',
     async (test) => {
       // execute cypress in the subdirectory
-      const { exitCode, output } = await executeCypress(test, 'run --quiet --json');
+      const { output } = await executeCypress(test, 'run --quiet --json');
 
       // update expected output if required
       if (process.env.UPDATE_EXPECTED_OUTPUT === '1') {
@@ -70,7 +69,6 @@ describe('integration tests', () => {
       // read expected output
       const expectedOutput = fs.readFileSync(path.resolve(__dirname, test, 'expected.json'));
 
-      expect(exitCode).toEqual(0);
       expect(output.trim()).toEqual(expectedOutput.toString().trim());
     },
     60000,
