@@ -1,0 +1,13 @@
+Task available at http://localhost:3000
+
+------------       RESULT       ------------
+
+Summary:
+  Commands > Bounding Rect.+: 6/6 points
+    ✔ Commands > Bounding Rect > returns the correct width: ok
+    ✔ Commands > Bounding Rect > returns the correct height: ok
+    ✔ Commands > Bounding Rect > returns the correct left position: ok
+    ✔ Commands > Bounding Rect > returns the correct top position: ok
+    ✔ Commands > Bounding Rect > returns the correct right position: ok
+    ✔ Commands > Bounding Rect > returns the correct bottom position: ok
+

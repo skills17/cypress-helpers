@@ -4,7 +4,9 @@
   "description": "Provides some Cypress helpers for usage in a skills competition environment.",
   "main": "lib/index.js",
   "files": [
-    "lib"
+    "lib",
+    "commands.js",
+    "commands.d.ts"
   ],
   "bin": {
     "skills17-cypress": "./bin/skills17-cypress"

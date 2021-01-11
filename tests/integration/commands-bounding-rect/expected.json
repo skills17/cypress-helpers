@@ -1,0 +1,62 @@
+
+{
+  "testResults": [
+    {
+      "group": "Commands > Bounding Rect.+",
+      "points": 6,
+      "maxPoints": 6,
+      "strategy": "add",
+      "manualCheck": false,
+      "tests": [
+        {
+          "name": "Commands > Bounding Rect > returns the correct width",
+          "points": 1,
+          "maxPoints": 1,
+          "successful": true,
+          "required": false,
+          "manualCheck": false
+        },
+        {
+          "name": "Commands > Bounding Rect > returns the correct height",
+          "points": 1,
+          "maxPoints": 1,
+          "successful": true,
+          "required": false,
+          "manualCheck": false
+        },
+        {
+          "name": "Commands > Bounding Rect > returns the correct left position",
+          "points": 1,
+          "maxPoints": 1,
+          "successful": true,
+          "required": false,
+          "manualCheck": false
+        },
+        {
+          "name": "Commands > Bounding Rect > returns the correct top position",
+          "points": 1,
+          "maxPoints": 1,
+          "successful": true,
+          "required": false,
+          "manualCheck": false
+        },
+        {
+          "name": "Commands > Bounding Rect > returns the correct right position",
+          "points": 1,
+          "maxPoints": 1,
+          "successful": true,
+          "required": false,
+          "manualCheck": false
+        },
+        {
+          "name": "Commands > Bounding Rect > returns the correct bottom position",
+          "points": 1,
+          "maxPoints": 1,
+          "successful": true,
+          "required": false,
+          "manualCheck": false
+        }
+      ]
+    }
+  ]
+}
