@@ -22,7 +22,7 @@
     "test": "jest",
     "test:watch": "npm test -- --watch",
     "test:update": "UPDATE_EXPECTED_OUTPUT=1 npm run test",
-    "prepublishOnly": "npm run test && npm run lint && npm run build"
+    "prepublishOnly": "npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
