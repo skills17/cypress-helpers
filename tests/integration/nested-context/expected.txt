@@ -1,0 +1,9 @@
+Task available at http://localhost:3000
+
+------------       RESULT       ------------
+
+Summary:
+  A > B.+: 1/1 point
+    ✔ A > B > Foo: ok
+  .+D.+: 1/1 point
+    ✔ C > D > Foo: ok

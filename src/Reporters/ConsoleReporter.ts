@@ -29,7 +29,13 @@ export default class ConsoleReporter {
   }
 
   public onTestEnd(test: Mocha.Test): void {
-    this.getTestRun().recordTest(test.titlePath().join(' > '), false, test.isPassed());
+    const titlePath = test.titlePath();
+
+    this.getTestRun().recordTest(
+      titlePath.filter((title) => title !== 'extra' && title !== 'Extra').join(' > '),
+      titlePath.includes('extra') || titlePath.includes('Extra'),
+      test.isPassed(),
+    );
   }
 
   public onRunEnd(): void {

@@ -21,6 +21,13 @@ const executeCypress = (
       output += data;
     });
     cmd.stderr?.on('data', (data) => {
+      // some cypress versions have a bug with an internal memory leak
+      if (
+        data.includes('MaxListenersExceededWarning: Possible EventEmitter memory leak detected.')
+      ) {
+        return;
+      }
+
       output += data;
     });
 

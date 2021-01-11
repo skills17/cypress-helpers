@@ -1,0 +1,25 @@
+{
+  "serve": {
+    "enabled": true
+  },
+  "groups": [
+    {
+      "match": "A.+"
+    },
+    {
+      "match": "B.+"
+    },
+    {
+      "match": "C.+"
+    },
+    {
+      "match": "D.+"
+    },
+    {
+      "match": "E.+"
+    },
+    {
+      "match": "F.+"
+    }
+  ]
+}
