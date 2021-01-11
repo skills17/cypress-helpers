@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "files": [
     "lib",
+    "bin",
     "commands.js",
     "commands.d.ts"
   ],
