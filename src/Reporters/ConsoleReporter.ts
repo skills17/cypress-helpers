@@ -34,7 +34,7 @@ export default class ConsoleReporter {
 
   public onRunEnd(): void {
     const printer = new TestResultPrinter(this.getTestRun());
-    printer.print({ printFooter: false });
+    printer.print({ printFooter: process.env.CYPRESS_QUIET !== '1' });
   }
 }
 

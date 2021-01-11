@@ -21,6 +21,20 @@ export default class CommandWrapper {
   }
 
   /**
+   * Returns whether the cypress output is supressed or not
+   */
+  private isCypressQuiet(): boolean {
+    return this.argv.includes('--quiet') || this.argv.includes('-q');
+  }
+
+  /**
+   * Returns whether the current command is a help command or not
+   */
+  private isHelpCommand(): boolean {
+    return this.argv.includes('--help') || this.argv.includes('-h');
+  }
+
+  /**
    * Builds arguments that will be passed to the cypress command
    */
   private buildCypressArgs(): string[] {
@@ -57,7 +71,11 @@ export default class CommandWrapper {
       // execute cypress
       const cypress = exec(command, {
         cwd: this.config.getProjectRoot(),
-        env: { FORCE_COLOR: '1', ...process.env },
+        env: {
+          FORCE_COLOR: '1',
+          CYPRESS_QUIET: this.isCypressQuiet() ? '1' : '0',
+          ...process.env,
+        },
       });
 
       cypress.on('exit', (code) => resolve(code ?? 1));
@@ -74,7 +92,7 @@ export default class CommandWrapper {
     await this.config.loadFromFile();
 
     // start task server
-    if (this.config.getServe().enabled) {
+    if (this.config.getServe().enabled && !this.isHelpCommand()) {
       this.server = new TaskServer(this.config);
       await this.server.serve(!this.isJson());
       console.log(); // eslint-disable-line no-console
