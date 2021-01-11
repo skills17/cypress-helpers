@@ -55,7 +55,7 @@
   "dependencies": {
     "@skills17/static-task-server": "^1.1.0",
     "@skills17/task-config": "^1.2.0",
-    "@skills17/test-result-printer": "^1.0.2",
+    "@skills17/test-result-printer": "^1.0.3",
     "shell-escape": "^0.2.0"
   },
   "peerDependencies": {
