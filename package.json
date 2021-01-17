@@ -39,6 +39,7 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-typescript": "^7.12.7",
+    "@types/cross-spawn": "^6.0.2",
     "@types/jest": "^26.0.20",
     "@types/shell-escape": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
@@ -59,7 +60,8 @@
     "@skills17/static-task-server": "^1.1.0",
     "@skills17/task-config": "^1.2.0",
     "@skills17/test-result-printer": "^1.0.3",
-    "shell-escape": "^0.2.0"
+    "cross-spawn": "^7.0.3",
+    "npm-run-path": "^4.0.1"
   },
   "peerDependencies": {
     "cypress": "^6.0.0"

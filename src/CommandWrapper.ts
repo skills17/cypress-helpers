@@ -1,6 +1,6 @@
 import path from 'path';
-import { exec } from 'child_process';
-import shellEscape from 'shell-escape';
+import spawn from 'cross-spawn';
+import npmRunPath from 'npm-run-path';
 import TaskConfig from '@skills17/task-config';
 import TaskServer from '@skills17/static-task-server';
 
@@ -71,15 +71,13 @@ export default class CommandWrapper {
    */
   private runCypress(): Promise<number> {
     return new Promise((resolve) => {
-      const command = `$(npm bin)/cypress ${shellEscape(this.buildCypressArgs())}`;
-
       // execute cypress
-      const cypress = exec(command, {
+      const cypress = spawn('cypress', this.buildCypressArgs(), {
         cwd: this.config.getProjectRoot(),
         env: {
           FORCE_COLOR: '1',
           CYPRESS_QUIET: this.isCypressQuiet() ? '1' : '0',
-          ...process.env,
+          ...npmRunPath.env(process.env),
         },
       });
 
