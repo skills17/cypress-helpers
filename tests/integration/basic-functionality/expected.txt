@@ -4,4 +4,4 @@ Task available at http://localhost:3000
 
 Summary:
   Basic Functionality.+: 1/1 point
-    ✔ Basic Functionality > serves the html file: ok
+    ✔ serves the html file

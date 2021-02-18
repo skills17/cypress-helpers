@@ -4,10 +4,10 @@ Task available at http://localhost:3000
 
 Summary:
   A.+: 1/2 points
-    ✔ A > Foo: ok
-    ✔ A > Bar: ok
-    ✖ A > Baz: failed
+    ✔ Foo
+    ✔ Bar
+    ✖ Baz
   B.+: 2/3 points
-    ✔ B > Foo: ok
-    ✔ B > Bar: ok
-    ✖ B > Baz: failed
+    ✔ Foo
+    ✔ Bar
+    ✖ Baz

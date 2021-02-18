@@ -1,7 +1,7 @@
 import Mocha from 'mocha'; // eslint-disable-line import/no-extraneous-dependencies
 import TaskConfig from '@skills17/task-config';
 import TestResultPrinter from '@skills17/test-result-printer';
-import { TestRun } from '@skills17/test-result'; // eslint-disable-line import/no-extraneous-dependencies
+import { TestRun } from '@skills17/test-result';
 
 const { EVENT_TEST_END } = Mocha.Runner.constants;
 
@@ -33,6 +33,7 @@ export default class ConsoleReporter {
 
     this.getTestRun().recordTest(
       titlePath.filter((title) => title !== 'extra' && title !== 'Extra').join(' > '),
+      test.title,
       titlePath.includes('extra') || titlePath.includes('Extra'),
       test.isPassed(),
     );

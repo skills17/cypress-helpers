@@ -4,7 +4,7 @@ Task available at http://localhost:3000
 
 Summary:
   A.+: 1/1 point
-    ✔ A > Foo: ok
+    ✔ Foo
 
 WARNING: The following tests do not belong to a group and were ignored:
   - B > Foo

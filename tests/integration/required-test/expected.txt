@@ -4,13 +4,13 @@ Task available at http://localhost:3000
 
 Summary:
   A.+: 0/3 points
-    ✔ A > Foo: ok
-    ✖ A > Bar: failed
-    ✖ A > Required: failed
+    ✔ Foo
+    ✖ Bar
+    ✖ Required
   B.+: 0/2 points
-    ✔ B > Foo: ok
-    ✔ B > Bar: ok
-    ✖ B > Required: failed
+    ✔ Foo
+    ✔ Bar
+    ✖ Required
   C.+: 2/2 points
-    ✔ C > Foo: ok
-    ✔ C > Required: ok
+    ✔ Foo
+    ✔ Required

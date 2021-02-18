@@ -4,6 +4,6 @@ Task available at http://localhost:3000
 
 Summary:
   A > B.+: 1/1 point
-    ✔ A > B > Foo: ok
+    ✔ Foo
   .+D.+: 1/1 point
-    ✔ C > D > Foo: ok
+    ✔ Foo

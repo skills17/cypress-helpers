@@ -9,7 +9,7 @@
       "manualCheck": false,
       "tests": [
         {
-          "name": "Commands > Bounding Rect > returns the correct width",
+          "name": "returns the correct width",
           "points": 1,
           "maxPoints": 1,
           "successful": true,
@@ -17,7 +17,7 @@
           "manualCheck": false
         },
         {
-          "name": "Commands > Bounding Rect > returns the correct height",
+          "name": "returns the correct height",
           "points": 1,
           "maxPoints": 1,
           "successful": true,
@@ -25,7 +25,7 @@
           "manualCheck": false
         },
         {
-          "name": "Commands > Bounding Rect > returns the correct left position",
+          "name": "returns the correct left position",
           "points": 1,
           "maxPoints": 1,
           "successful": true,
@@ -33,7 +33,7 @@
           "manualCheck": false
         },
         {
-          "name": "Commands > Bounding Rect > returns the correct top position",
+          "name": "returns the correct top position",
           "points": 1,
           "maxPoints": 1,
           "successful": true,
@@ -41,7 +41,7 @@
           "manualCheck": false
         },
         {
-          "name": "Commands > Bounding Rect > returns the correct right position",
+          "name": "returns the correct right position",
           "points": 1,
           "maxPoints": 1,
           "successful": true,
@@ -49,7 +49,7 @@
           "manualCheck": false
         },
         {
-          "name": "Commands > Bounding Rect > returns the correct bottom position",
+          "name": "returns the correct bottom position",
           "points": 1,
           "maxPoints": 1,
           "successful": true,

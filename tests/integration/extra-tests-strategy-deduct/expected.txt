@@ -4,26 +4,26 @@ Task available at http://localhost:3000
 
 Summary:
   A.+: 2/3 points
-    ✔ A > Foo: ok
-    ✖ A > Bar: failed
-    ✔ A > Baz: ok
+    ✔ Foo
+    ✖ Bar
+    ✔ Baz
   B.+: 1/2 points [manual check required]
-    ✔ B > Foo: ok
-    ✖ B > Bar: failed
-    ? B > Baz: WARNING: please check manually for static return values and/or logical errors
+    ✔ Foo
+    ✖ Bar
+    ? Baz please check manually for static return values and/or logical errors
   C.+: 0/2 points
-    ✖ C > Foo: failed
-    ✖ C > Bar: failed
-    ✖ C > Baz: failed
+    ✖ Foo
+    ✖ Bar
+    ✖ Baz
   D.+: 1/1.5 points
-    ✔ D > Foo: ok
-    ✖ D > Bar: failed
-    ✔ D > Baz: ok
+    ✔ Foo
+    ✖ Bar
+    ✔ Baz
   E.+: 0.5/2 points
-    ✔ E > Foo: ok
-    ✖ E > MorePoints: failed
-    ✖ E > Bar: failed
-    ✔ E > Baz: ok
+    ✔ Foo
+    ✖ MorePoints
+    ✖ Bar
+    ✔ Baz
   F.+: 2/2 points
-    ✔ F > Foo: ok
-    ✔ F > Bar: ok
+    ✔ Foo
+    ✔ Bar

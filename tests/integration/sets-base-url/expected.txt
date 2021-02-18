@@ -4,4 +4,4 @@ Task available at http://localhost:4321
 
 Summary:
   Sets Base Url.+: 1/1 point
-    ✔ Sets Base Url > automatically sets the correct base url: ok
+    ✔ automatically sets the correct base url
