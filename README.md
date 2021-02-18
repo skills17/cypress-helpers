@@ -30,7 +30,7 @@ To use the cypress commands shipped with this package, import them in the suppor
 
 ```typescript
 // cypress/support/index.js
-import '@skills17/cypress-helpers/commands';
+import '@skills17/cypress-helpers/support';
 ```
 
 It is suggested to add the following npm scripts:

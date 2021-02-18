@@ -6,8 +6,8 @@
   "files": [
     "lib",
     "bin",
-    "commands.js",
-    "commands.d.ts"
+    "support.js",
+    "support.d.ts"
   ],
   "bin": {
     "skills17-cypress": "./bin/skills17-cypress"

@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-/// <reference path="../../../../../commands.d.ts" />
+/// <reference path="../../../../../support.d.ts" />
 
 context('Commands', () => {
   context('Bounding Rect', () => {
