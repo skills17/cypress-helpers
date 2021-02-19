@@ -60,6 +60,9 @@ describe('local history', () => {
         },
       ]);
     });
+
+    expect(groupsFound['A.+']).toEqual(true);
+    expect(groupsFound['B.+']).toEqual(true);
   }, 60000);
 
   it('is disabled by default', async () => {
