@@ -1,5 +1,7 @@
 Task available at http://localhost:4321
 
+Starting cypress...
+
 ------------       RESULT       ------------
 
 Summary:

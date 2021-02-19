@@ -102,6 +102,10 @@ export default class CommandWrapper {
       console.log(); // eslint-disable-line no-console
     }
 
+    if (!this.isJson()) {
+      console.log('Starting cypress...'); // eslint-disable-line no-console
+    }
+
     // run cypress
     const exitCode = await this.runCypress();
 

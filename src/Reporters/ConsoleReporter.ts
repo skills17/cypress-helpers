@@ -41,6 +41,7 @@ export default class ConsoleReporter {
 
   public onRunEnd(): void {
     const printer = new TestResultPrinter(this.getTestRun());
+    console.log(); // eslint-disable-line no-console
     printer.print({ printFooter: process.env.CYPRESS_QUIET !== '1' });
   }
 }
