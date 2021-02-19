@@ -63,9 +63,9 @@
   },
   "dependencies": {
     "@skills17/static-task-server": "^2.0.0",
-    "@skills17/task-config": "^2.0.0",
-    "@skills17/test-result": "^2.0.0",
-    "@skills17/test-result-printer": "^2.0.1",
+    "@skills17/task-config": "^2.0.1",
+    "@skills17/test-result": "^2.0.1",
+    "@skills17/test-result-printer": "^2.0.2",
     "cross-spawn": "^7.0.3",
     "npm-run-path": "^4.0.1",
     "uniqid": "^5.3.0"
