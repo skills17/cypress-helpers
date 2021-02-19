@@ -77,6 +77,7 @@ export default class CommandWrapper {
         env: {
           FORCE_COLOR: '1',
           CYPRESS_QUIET: this.isCypressQuiet() ? '1' : '0',
+          CYPRESS_LOCAL_HISTORY: this.config.isLocalHistoryEnabled() ? '1' : '0',
           ...npmRunPath.env(process.env),
         },
       });

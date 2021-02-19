@@ -1,0 +1,12 @@
+Task available at http://localhost:3000
+
+------------       RESULT       ------------
+
+Summary:
+  A.+: 1/2 points
+    ✔ Foo
+    ✖ Bar
+  B.+: 1/2 points
+    ✔ Foo
+    ✖ Bar
+

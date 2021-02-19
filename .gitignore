@@ -13,3 +13,4 @@ npm-debug.log*
 lib
 **/cypress/screenshots
 **/cypress/videos
+.history

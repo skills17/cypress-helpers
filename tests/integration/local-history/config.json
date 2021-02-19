@@ -1,0 +1,14 @@
+{
+  "serve": {
+    "enabled": true
+  },
+  "localHistory": true,
+  "groups": [
+    {
+      "match": "A.+"
+    },
+    {
+      "match": "B.+"
+    }
+  ]
+}

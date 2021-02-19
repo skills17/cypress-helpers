@@ -1,1 +1,2 @@
 import '../Commands';
+import './LocalHistory';

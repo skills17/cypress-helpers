@@ -26,11 +26,18 @@ To install this package, simply run the following command:
 npm install @skills17/cypress-helpers
 ```
 
-To use the cypress commands shipped with this package, import them in the support file (`cypress/support/index.js`):
+Additionally, install the support file and plugins shipped with this package:
 
 ```typescript
-// cypress/support/index.js
+// cypress/support/index.ts
 import '@skills17/cypress-helpers/support';
+```
+
+```typescript
+// cypress/plugins/index.ts
+import plugins from '../../../../../plugins';
+
+module.exports = plugins;
 ```
 
 It is suggested to add the following npm scripts:
