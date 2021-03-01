@@ -98,8 +98,7 @@ export default class CommandWrapper {
     // start task server
     if (this.config.getServe().enabled && !this.isHelpCommand()) {
       this.server = new TaskServer(this.config);
-      await this.server.serve(!this.isJson());
-      console.log(); // eslint-disable-line no-console
+      await this.server.serve(false);
     }
 
     if (!this.isJson()) {
