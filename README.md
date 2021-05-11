@@ -35,7 +35,7 @@ import '@skills17/cypress-helpers/support';
 
 ```typescript
 // cypress/plugins/index.ts
-import plugins from '../../../../../plugins';
+import plugins from '@skills17/cypress-helpers/plugins';
 
 module.exports = plugins;
 ```
