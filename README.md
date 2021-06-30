@@ -44,9 +44,9 @@ It is suggested to add the following npm scripts:
 
 ```json
   "scripts": {
-    "start": "skills17-cypress open",
-    "test": "skills17-cypress run --quiet",
-    "test:json": "skills17-cypress run --quiet --json"
+    "start": "skills17-cypress open --browser chrome",
+    "test": "skills17-cypress run --quiet --browser chrome --headless",
+    "test:json": "skills17-cypress run --quiet --browser chrome --headless --json"
   },
 ```
 
@@ -54,6 +54,9 @@ This will provide the following commands:
 - `npm start` - Start the interactive cypress browser (useful for the competitors to debug errors)
 - `npm test` - Run all tests once and show a nice output with the awarded points (useful for the competitors to see their points)
 - `npm run test:json` - Run all tests once and get a json output (useful for automated marking scripts)
+
+For international championships, it is also strongly recommended to set the [`--timezone` argument](#cli) to the timezone in which the championship takes place.
+This helps avoiding time discrepancies between the development environment and the championship-site.
 
 ## Usage
 
@@ -71,6 +74,7 @@ All arguments to the command will be forwarded to `cypress` so cypress can be us
 
 Additionally, the following new arguments are available:
 - `--json` output the test result in json (only for `cypress run`)
+- `--timezone <timezone>` forces the timezone during a test run (e.g. `--timezone Etc/UTC`)
 
 ### Grouping
 
