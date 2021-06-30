@@ -6,7 +6,7 @@ describe('integration tests', () => {
   // get all integration tests
   const integrationTests = fs.readdirSync(__dirname).filter((file) => {
     const fileInfo = fs.statSync(path.resolve(__dirname, file));
-    return fileInfo.isDirectory();
+    return fileInfo.isDirectory() && !file.startsWith('timezone-');
   });
 
   it.each(integrationTests)(

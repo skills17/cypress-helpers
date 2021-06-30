@@ -35,10 +35,35 @@ export default class CommandWrapper {
   }
 
   /**
+   * Returns the timezone if one is specified.
+   */
+  private getTimezone(): string | undefined {
+    const timezoneIndex = this.argv.indexOf('--timezone');
+
+    if (timezoneIndex < 0 || this.argv.length < timezoneIndex + 1) {
+      return undefined;
+    }
+
+    return this.argv[timezoneIndex + 1];
+  }
+
+  /**
    * Builds arguments that will be passed to the cypress command
    */
   private buildCypressArgs(): string[] {
-    const args = [...this.argv.filter((arg) => arg !== '--json')];
+    const args = [
+      ...this.argv.filter((arg, i) => {
+        if (arg === '--json' || arg === '--timezone') {
+          return false;
+        }
+
+        if (this.argv.includes('--timezone') && i === this.argv.indexOf('--timezone') + 1) {
+          return false;
+        }
+
+        return true;
+      }),
+    ];
 
     // set base url
     if (this.server && args.length > 0) {
@@ -78,6 +103,7 @@ export default class CommandWrapper {
           FORCE_COLOR: '1',
           CYPRESS_QUIET: this.isCypressQuiet() ? '1' : '0',
           CYPRESS_LOCAL_HISTORY: this.config.isLocalHistoryEnabled() ? '1' : '0',
+          TZ: this.getTimezone(),
           ...npmRunPath.env(process.env),
         },
       });
