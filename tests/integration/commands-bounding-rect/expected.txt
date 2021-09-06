@@ -4,10 +4,9 @@ Starting cypress...
 
 Summary:
   Commands > Bounding Rect.+: 6/6 points
-    ✔ returns the correct width
-    ✔ returns the correct height
-    ✔ returns the correct left position
-    ✔ returns the correct top position
-    ✔ returns the correct right position
-    ✔ returns the correct bottom position
-
+    ✔ Bounding Rect > returns the correct width
+    ✔ Bounding Rect > returns the correct height
+    ✔ Bounding Rect > returns the correct left position
+    ✔ Bounding Rect > returns the correct top position
+    ✔ Bounding Rect > returns the correct right position
+    ✔ Bounding Rect > returns the correct bottom position

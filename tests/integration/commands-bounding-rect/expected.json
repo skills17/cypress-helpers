@@ -1,4 +1,3 @@
-
 {
   "testResults": [
     {
@@ -9,7 +8,7 @@
       "manualCheck": false,
       "tests": [
         {
-          "name": "returns the correct width",
+          "name": "Bounding Rect > returns the correct width",
           "points": 1,
           "maxPoints": 1,
           "successful": true,
@@ -17,7 +16,7 @@
           "manualCheck": false
         },
         {
-          "name": "returns the correct height",
+          "name": "Bounding Rect > returns the correct height",
           "points": 1,
           "maxPoints": 1,
           "successful": true,
@@ -25,7 +24,7 @@
           "manualCheck": false
         },
         {
-          "name": "returns the correct left position",
+          "name": "Bounding Rect > returns the correct left position",
           "points": 1,
           "maxPoints": 1,
           "successful": true,
@@ -33,7 +32,7 @@
           "manualCheck": false
         },
         {
-          "name": "returns the correct top position",
+          "name": "Bounding Rect > returns the correct top position",
           "points": 1,
           "maxPoints": 1,
           "successful": true,
@@ -41,7 +40,7 @@
           "manualCheck": false
         },
         {
-          "name": "returns the correct right position",
+          "name": "Bounding Rect > returns the correct right position",
           "points": 1,
           "maxPoints": 1,
           "successful": true,
@@ -49,7 +48,7 @@
           "manualCheck": false
         },
         {
-          "name": "returns the correct bottom position",
+          "name": "Bounding Rect > returns the correct bottom position",
           "points": 1,
           "maxPoints": 1,
           "successful": true,

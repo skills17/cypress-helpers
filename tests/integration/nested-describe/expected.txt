@@ -1,0 +1,8 @@
+Starting cypress...
+
+------------       RESULT       ------------
+
+Summary:
+  Nested Describe.+: 2/2 points
+    ✔ describe 1 > serves the html file
+    ✔ describe 2 > serves the html file

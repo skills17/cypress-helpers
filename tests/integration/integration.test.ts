@@ -36,7 +36,7 @@ describe('integration tests', () => {
 
       // update expected output if required
       if (process.env.UPDATE_EXPECTED_OUTPUT === '1') {
-        fs.writeFileSync(path.resolve(__dirname, test, 'expected.json'), output);
+        fs.writeFileSync(path.resolve(__dirname, test, 'expected.json'), output.trim());
       }
 
       // read expected output
