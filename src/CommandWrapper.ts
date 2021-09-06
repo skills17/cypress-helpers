@@ -104,7 +104,7 @@ export default class CommandWrapper {
           CYPRESS_QUIET: this.isCypressQuiet() ? '1' : '0',
           CYPRESS_LOCAL_HISTORY: this.config.isLocalHistoryEnabled() ? '1' : '0',
           TZ: this.getTimezone(),
-          ...npmRunPath.env(process.env),
+          ...npmRunPath.env({ env: process.env }),
         },
       });
 
