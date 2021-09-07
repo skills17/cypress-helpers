@@ -17,8 +17,8 @@ This package provides some Cypress helpers for usage in a skills competition env
 ## Installation
 
 **Requirements:**
-- Node `14` or greater
-- Cypress `6.0` or greater
+- Node `16` or greater
+- Cypress `8.0` or greater
 
 To install this package, simply run the following command:
 
@@ -55,8 +55,8 @@ This will provide the following commands:
 - `npm test` - Run all tests once and show a nice output with the awarded points (useful for the competitors to see their points)
 - `npm run test:json` - Run all tests once and get a json output (useful for automated marking scripts)
 
-For international championships, it is also strongly recommended to set the [`--timezone` argument](#cli) to the timezone in which the championship takes place.
-This helps avoiding time discrepancies between the development environment and the championship-site.
+For international championships, it is also strongly recommended setting the [`--timezone` argument](#cli) to the timezone in which the championship takes place.
+This helps to avoid time discrepancies between the development environment and the championship-site.
 
 ## Usage
 
