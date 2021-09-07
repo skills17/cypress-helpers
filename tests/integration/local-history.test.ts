@@ -31,7 +31,7 @@ describe('local history', () => {
       const history = JSON.parse(fs.readFileSync(path.resolve(historyDir, file)).toString());
       groupsFound[history.testResults[0].group as 'A.+' | 'B.+'] = true;
 
-      expect(typeof history.time).toEqual('number');
+      expect(typeof history.time).toEqual('string');
       expect(history.testResults).toStrictEqual([
         {
           group: history.testResults[0].group,
