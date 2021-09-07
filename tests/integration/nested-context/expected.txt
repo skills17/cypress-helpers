@@ -4,6 +4,7 @@ Starting cypress...
 
 Summary:
   A > B.+: 1/1 point
-    ✔ Foo
+    ✔ B > Foo
   .+D.+: 1/1 point
-    ✔ Foo
+    ✔ D > Foo
+

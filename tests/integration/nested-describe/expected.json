@@ -1,31 +1,23 @@
+
 {
   "testResults": [
     {
-      "group": "A > B.+",
-      "points": 1,
-      "maxPoints": 1,
+      "group": "Nested Describe.+",
+      "points": 2,
+      "maxPoints": 2,
       "strategy": "add",
       "manualCheck": false,
       "tests": [
         {
-          "name": "B > Foo",
+          "name": "describe 1 > serves the html file",
           "points": 1,
           "maxPoints": 1,
           "successful": true,
           "required": false,
           "manualCheck": false
-        }
-      ]
-    },
-    {
-      "group": ".+D.+",
-      "points": 1,
-      "maxPoints": 1,
-      "strategy": "add",
-      "manualCheck": false,
-      "tests": [
+        },
         {
-          "name": "D > Foo",
+          "name": "describe 2 > serves the html file",
           "points": 1,
           "maxPoints": 1,
           "successful": true,

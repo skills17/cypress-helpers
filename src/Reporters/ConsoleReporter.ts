@@ -30,10 +30,13 @@ export default class ConsoleReporter {
 
   public onTestEnd(test: Mocha.Test): void {
     const titlePath = test.titlePath();
+    const titlePathWithoutExtra = titlePath.filter(
+      (title) => title !== 'extra' && title !== 'Extra',
+    );
 
     this.getTestRun().recordTest(
-      titlePath.filter((title) => title !== 'extra' && title !== 'Extra').join(' > '),
-      test.title,
+      titlePathWithoutExtra.join(' > '),
+      titlePathWithoutExtra.slice(1).join(' > '),
       titlePath.includes('extra') || titlePath.includes('Extra'),
       test.isPassed(),
     );
