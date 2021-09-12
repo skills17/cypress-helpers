@@ -8,6 +8,8 @@ const { EVENT_TEST_END } = Mocha.Runner.constants;
 export default class ConsoleReporter {
   private static testRun: TestRun;
 
+  private static showPoints = true;
+
   constructor(runner: Mocha.Runner) {
     // cypress starts a completely new test run per spec file.
     // so we have to store the test run in a static variable and listen on the `beforeExit` event
@@ -16,6 +18,7 @@ export default class ConsoleReporter {
       const config = new TaskConfig();
       config.loadFromFileSync();
       ConsoleReporter.testRun = config.createTestRun();
+      ConsoleReporter.showPoints = config.arePointsShown();
 
       process.on('exit', this.onRunEnd.bind(this));
     }
@@ -45,7 +48,10 @@ export default class ConsoleReporter {
   public onRunEnd(): void {
     const printer = new TestResultPrinter(this.getTestRun());
     console.log(); // eslint-disable-line no-console
-    printer.print({ printFooter: process.env.CYPRESS_QUIET !== '1' });
+    printer.print({
+      printFooter: process.env.CYPRESS_QUIET !== '1',
+      printPoints: ConsoleReporter.showPoints,
+    });
   }
 }
 

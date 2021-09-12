@@ -1,0 +1,11 @@
+Starting cypress...
+
+------------       RESULT       ------------
+
+Summary:
+  A.+
+    ✔ Foo
+  B.+
+    ✔ Foo
+    ✔ Bar
+    ✖ Baz
