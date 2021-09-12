@@ -1,6 +1,6 @@
 {
   "name": "@skills17/cypress-helpers",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Provides some Cypress helpers for usage in a skills competition environment.",
   "main": "lib/index.js",
   "files": [
