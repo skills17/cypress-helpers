@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: sets-base-url
+serve:
+  enabled: true
+  port: 4321
+  mapping:
+    "/src": "./src"
+groups:
+- match: Sets Base Url.+

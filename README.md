@@ -60,9 +60,9 @@ This helps to avoid time discrepancies between the development environment and t
 
 ## Usage
 
-A `config.json` file needs to be created that contains some information about the task. It should be placed in the root folder of your task, next to the `package.json` file.
+A `config.yaml` file needs to be created that contains some information about the task. It should be placed in the root folder of your task, next to the `package.json` file.
 
-See the [`@skills17/task-config`](https://github.com/skills17/task-config#configuration) package for a detailed description of all available properties in the `config.json` file.
+See the [`@skills17/task-config`](https://github.com/skills17/task-config#configuration) package for a detailed description of all available properties in the `config.yaml` file.
 
 ### CLI
 
@@ -80,7 +80,7 @@ Additionally, the following new arguments are available:
 
 A core concept is test groups. You usually don't want to test everything for one criterion in one test function but instead split it into multiple ones for a cleaner test class and a better overview.
 
-In JS, tests are grouped by a test name prefix defined in the `config.json` file.
+In JS, tests are grouped by a test name prefix defined in the `config.yaml` file.
 
 All context are concatenated with the actual test names before evaluation.
 
@@ -102,7 +102,7 @@ To catch and group all tests within the `Overview` context, the group matcher ca
 
 Cypress tests usually run against a website competitors have to implement.
 This has to be served in order for cypress to be able to access it.
-This package respects the [`serve` option](https://github.com/skills17/task-config#serve-serve) in the `config.json` and automatically starts a static file server for the paths defined there if it is enabled (`serve.enabled` has to be set to `true`).
+This package respects the [`serve` option](https://github.com/skills17/task-config#serve-serve) in the `config.yaml` and automatically starts a static file server for the paths defined there if it is enabled (`serve.enabled` has to be set to `true`).
 
 The base path is also automatically set for cypress, so you can omit the host and directly start with the path in any cypress statements (e.g. `cy.visit('/countries')`).
 

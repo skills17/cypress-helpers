@@ -23,7 +23,13 @@ const executeCypress = (
     cmd.stderr?.on('data', (data) => {
       // some cypress versions have a bug with an internal memory leak
       if (
-        data.includes('MaxListenersExceededWarning: Possible EventEmitter memory leak detected.')
+        data.includes('MaxListenersExceededWarning: Possible EventEmitter memory leak detected.') ||
+        data.includes('Failed to connect to the bus:') ||
+        data.includes('Passthrough is not supported,') ||
+        data.includes('Browserslist: caniuse-lite is outdated. Please run:') ||
+        data.includes('npx browserslist@latest --update-db') ||
+        data.includes('Why you should do it regularly:') ||
+        data.includes('https://github.com/browserslist/browserslist')
       ) {
         return;
       }
