@@ -29,7 +29,8 @@ const executeCypress = (
         data.includes('Browserslist: caniuse-lite is outdated. Please run:') ||
         data.includes('npx browserslist@latest --update-db') ||
         data.includes('Why you should do it regularly:') ||
-        data.includes('https://github.com/browserslist/browserslist')
+        data.includes('https://github.com/browserslist/browserslist') ||
+        data.includes('InitializeSandbox()  called with multiple threads in process gpu-process')
       ) {
         return;
       }

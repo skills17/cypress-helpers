@@ -2,6 +2,7 @@
 id: nested-context
 serve:
   enabled: true
+localHistory: true
 groups:
 - match: A > B.+
 - match: ".+D.+"
