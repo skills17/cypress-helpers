@@ -38,7 +38,7 @@ import '@skills17/cypress-helpers/support';
 import { defineConfig } from 'cypress';
 import plugins from '@skills17/cypress-helpers/plugins';
 
-module.exports = defineConfig({
+export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       plugins(on, config);
