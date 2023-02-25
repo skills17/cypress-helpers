@@ -18,7 +18,7 @@ This package provides some Cypress helpers for usage in a skills competition env
 
 **Requirements:**
 - Node `16` or greater
-- Cypress `8.0` or greater
+- Cypress `12.0` or greater
 
 To install this package, simply run the following command:
 
@@ -29,22 +29,30 @@ npm install @skills17/cypress-helpers
 Additionally, install the support file and plugins shipped with this package:
 
 ```typescript
-// cypress/support/index.ts
+// cypress/support/e2e.ts
 import '@skills17/cypress-helpers/support';
 ```
 
 ```typescript
-// cypress/plugins/index.ts
+// cypress/cypress.config.ts
+import { defineConfig } from 'cypress';
 import plugins from '@skills17/cypress-helpers/plugins';
 
-module.exports = plugins;
+module.exports = defineConfig({
+  e2e: {
+    setupNodeEvents(on, config) {
+      plugins(on, config);
+    },
+  },
+});
+
 ```
 
 It is suggested to add the following npm scripts:
 
 ```json
   "scripts": {
-    "start": "skills17-cypress open --browser chrome",
+    "start": "skills17-cypress open --e2e --browser chrome",
     "test": "skills17-cypress run --quiet --browser chrome --headless",
     "test:json": "skills17-cypress run --quiet --browser chrome --headless --json"
   },
