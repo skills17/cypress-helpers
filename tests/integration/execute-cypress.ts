@@ -31,7 +31,8 @@ const executeCypress = (
         data.includes('Why you should do it regularly:') ||
         data.includes('https://github.com/browserslist/browserslist') ||
         data.includes('InitializeSandbox()  called with multiple threads in process gpu-process') ||
-        data.includes('dri3 extension not supported')
+        data.includes('dri3 extension not supported') ||
+        data.includes('DevTools listening on ws://')
       ) {
         return;
       }
