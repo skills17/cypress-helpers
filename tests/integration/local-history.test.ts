@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs';
-import rimraf from 'rimraf';
+import { rimrafSync } from 'rimraf';
 import executeCypress from './execute-cypress';
 
 const historyDir = path.resolve(__dirname, 'local-history', '.history');
@@ -10,10 +10,10 @@ const disabledHistoryDir = path.resolve(__dirname, 'local-history-disabled', '.h
 describe('local history', () => {
   beforeEach(() => {
     if (fs.existsSync(historyDir)) {
-      rimraf.sync(historyDir);
+      rimrafSync(historyDir);
     }
     if (fs.existsSync(nestedHistoryDir)) {
-      rimraf.sync(nestedHistoryDir);
+      rimrafSync(nestedHistoryDir);
     }
   });
 
