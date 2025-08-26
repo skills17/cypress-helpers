@@ -32,7 +32,8 @@ const executeCypress = (
         data.includes('https://github.com/browserslist/browserslist') ||
         data.includes('InitializeSandbox()  called with multiple threads in process gpu-process') ||
         data.includes('dri3 extension not supported') ||
-        data.includes('DevTools listening on ws://')
+        data.includes('DevTools listening on ws://') ||
+        data.includes('Failed to call method: org.freedesktop.DBus.NameHasOwner:')
       ) {
         return;
       }
