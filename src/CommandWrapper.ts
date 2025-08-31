@@ -105,6 +105,12 @@ export default class CommandWrapper {
           CYPRESS_LOCAL_HISTORY: this.config.isLocalHistoryEnabled() ? '1' : '0',
           TZ: this.getTimezone(),
           ...npmRunPath.env({ env: process.env }),
+          // if running in AWS lambda, set the necessary args so that cypress can start
+          ...(process.env.AWS_LAMBDA === '1'
+            ? {
+                ELECTRON_EXTRA_LAUNCH_ARGS: '--no-zygote --disable-gpu --single-process',
+              }
+            : {}),
         },
       });
 
